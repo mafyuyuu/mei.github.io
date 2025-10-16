@@ -40,6 +40,16 @@ h2 {
   margin-top: 1rem;
 }
 
+p, a, figcaption, td, li, footer {
+  color: #2b2f3a;
+  opacity: 0.9;
+}
+
+p strong {
+  color: #333b4d;
+}
+
+
 div, section {
   background: var(--glass);
   backdrop-filter: blur(10px);
