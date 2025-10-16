@@ -20,6 +20,8 @@ body {
   align-items: center;
   text-align: center;
   transition: all 0.3s ease;
+  position: relative;
+  overflow-x: hidden;
 }
 
 h1, h2 {
@@ -151,11 +153,6 @@ footer {
 
 .glow {
   animation: glowPulse 2.5s infinite alternate;
-}
-
-body {
-  position: relative;
-  overflow-x: hidden;
 }
 
 body::before, body::after {
