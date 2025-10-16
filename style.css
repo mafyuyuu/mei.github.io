@@ -1,10 +1,10 @@
 :root {
   --primary: #a8e1ff;
   --secondary: #ffffff;
-  --accent: #b8baff;
+  --accent: #ffe169;
   --text: #1e2430;
-  --bg: #edf6ff;
-  --glow: 0 0 20px rgba(168, 225, 255, 0.6);
+  --bg: #f4faff;
+  --glow: 0 0 20px rgba(255, 225, 105, 0.6);
   --glass: rgba(255, 255, 255, 0.4);
 }
 
@@ -26,7 +26,7 @@ body {
 
 h1, h2 {
   color: var(--accent);
-  text-shadow: 0 0 10px rgba(184, 186, 255, 0.5);
+  text-shadow: 0 0 10px rgba(255, 225, 105, 0.6), 0 0 20px rgba(168, 225, 255, 0.4);
   letter-spacing: 1px;
 }
 
@@ -42,13 +42,12 @@ h2 {
 
 p, a, figcaption, td, li, footer {
   color: #2b2f3a;
-  opacity: 0.9; 
+  opacity: 0.9;
 }
 
 p strong {
   color: #333b4d;
 }
-
 
 div, section {
   background: var(--glass);
@@ -63,7 +62,7 @@ div, section {
 
 div:hover, section:hover {
   transform: translateY(-4px);
-  box-shadow: 0 0 30px rgba(168, 225, 255, 0.8);
+  box-shadow: 0 0 30px rgba(255, 225, 105, 0.8);
 }
 
 a {
@@ -99,13 +98,13 @@ a:hover::after {
 img {
   max-width: 100%;
   border-radius: 15px;
-  box-shadow: 0 0 15px rgba(168, 225, 255, 0.4);
+  box-shadow: 0 0 15px rgba(255, 225, 105, 0.4);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 img:hover {
   transform: scale(1.05);
-  box-shadow: 0 0 25px rgba(184, 186, 255, 0.6);
+  box-shadow: 0 0 25px rgba(168, 225, 255, 0.5);
 }
 
 table {
@@ -129,13 +128,13 @@ td {
 }
 
 .highlight {
-  background: rgba(168, 225, 255, 0.4);
+  background: rgba(255, 225, 105, 0.4);
   color: #0e2135;
-  box-shadow: inset 0 0 10px rgba(168, 225, 255, 0.5);
+  box-shadow: inset 0 0 10px rgba(255, 225, 105, 0.5);
 }
 
 .pudrowy {
-  background: rgba(255, 200, 230, 0.5);
+  background: rgba(168, 225, 255, 0.4);
 }
 
 figcaption {
@@ -154,10 +153,10 @@ footer {
 
 @keyframes glowPulse {
   0%, 100% {
-    box-shadow: 0 0 15px rgba(168, 225, 255, 0.4);
+    box-shadow: 0 0 15px rgba(255, 225, 105, 0.5);
   }
   50% {
-    box-shadow: 0 0 30px rgba(184, 186, 255, 0.7);
+    box-shadow: 0 0 30px rgba(168, 225, 255, 0.7);
   }
 }
 
@@ -177,30 +176,28 @@ body::before, body::after {
 }
 
 body::before {
-  background: radial-gradient(circle, rgba(184, 186, 255, 0.5) 0%, transparent 70%) 0 0,
-              radial-gradient(circle, rgba(159, 223, 255, 0.4) 0%, transparent 70%) 50px 50px,
-              radial-gradient(circle, rgba(255, 255, 255, 0.3) 0%, transparent 70%) 100px 150px,
-              radial-gradient(circle, rgba(159, 223, 255, 0.4) 0%, transparent 70%) 200px 80px,
-              radial-gradient(circle, rgba(184, 186, 255, 0.5) 0%, transparent 70%) 300px 200px,
-              radial-gradient(circle, rgba(255, 255, 255, 0.3) 0%, transparent 70%) 400px 300px,
-              radial-gradient(circle, rgba(159, 223, 255, 0.3) 0%, transparent 70%) 600px 400px,
-              radial-gradient(circle, rgba(184, 186, 255, 0.4) 0%, transparent 70%) 800px 250px,
-              radial-gradient(circle, rgba(255, 255, 255, 0.4) 0%, transparent 70%) 1000px 100px;
+  background: radial-gradient(circle, rgba(255, 225, 105, 0.4) 0%, transparent 70%) 0 0,
+              radial-gradient(circle, rgba(168, 225, 255, 0.4) 0%, transparent 70%) 100px 100px,
+              radial-gradient(circle, rgba(255, 255, 255, 0.3) 0%, transparent 70%) 200px 150px,
+              radial-gradient(circle, rgba(255, 225, 105, 0.3) 0%, transparent 70%) 300px 250px,
+              radial-gradient(circle, rgba(168, 225, 255, 0.4) 0%, transparent 70%) 400px 350px,
+              radial-gradient(circle, rgba(255, 255, 255, 0.4) 0%, transparent 70%) 600px 450px,
+              radial-gradient(circle, rgba(255, 225, 105, 0.4) 0%, transparent 70%) 800px 300px;
   background-size: 1200px 1200px;
   animation: starsMove 60s linear infinite;
 }
 
 body::after {
-  background: radial-gradient(circle at 50% 60%, rgba(168, 225, 255, 0.15), rgba(184, 186, 255, 0.05) 60%, transparent 100%);
+  background: radial-gradient(circle at 50% 60%, rgba(255, 225, 105, 0.15), rgba(168, 225, 255, 0.1) 60%, transparent 100%);
   animation: auraFloat 15s ease-in-out infinite alternate;
 }
 
 @keyframes starsMove {
   from {
-    background-position: 0 0, 50px 50px, 100px 150px, 200px 80px, 300px 200px, 400px 300px, 600px 400px, 800px 250px, 1000px 100px;
+    background-position: 0 0;
   }
   to {
-    background-position: 1000px 800px, 1050px 850px, 1100px 950px, 1200px 880px, 1300px 1000px, 1400px 1100px, 1600px 1200px, 1800px 1050px, 2000px 900px;
+    background-position: 1000px 800px;
   }
 }
 
