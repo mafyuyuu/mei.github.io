@@ -215,3 +215,111 @@ body::after {
     opacity: 0.7;
   }
 }
+
+.halloween-body {
+  background: radial-gradient(circle at top, #0b0013, #1a001f 80%);
+  color: #ffb347;
+  font-family: "Creepster", "Poppins", sans-serif;
+  overflow: hidden;
+  position: relative;
+  min-height: 100vh;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.halloween-body::before,
+.halloween-body::after {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image:
+    url('https://i.ibb.co/kMBTzN9/ghost1.png'),
+    url('https://i.ibb.co/WkL1Zfb/ghost2.png'),
+    url('https://i.ibb.co/0mVqgZP/ghost3.png');
+  background-repeat: no-repeat;
+  background-size: 150px, 100px, 120px;
+  background-position:
+    10% 20%,
+    80% 30%,
+    50% 70%;
+  opacity: 0.15;
+  z-index: -1;
+  animation: floatGhosts 25s infinite alternate ease-in-out;
+}
+
+@keyframes floatGhosts {
+  0% {
+    background-position: 10% 20%, 80% 30%, 50% 70%;
+  }
+  50% {
+    background-position: 15% 25%, 75% 35%, 55% 65%;
+  }
+  100% {
+    background-position: 10% 20%, 80% 30%, 50% 70%;
+  }
+}
+
+.halloween-container {
+  background: rgba(255, 255, 255, 0.08);
+  border: 2px solid rgba(255, 102, 0, 0.3);
+  box-shadow: 0 0 25px rgba(255, 140, 0, 0.6);
+  border-radius: 20px;
+  padding: 2rem 3rem;
+  backdrop-filter: blur(8px);
+  max-width: 700px;
+  z-index: 1;
+  animation: glowPulse 3s infinite alternate;
+}
+
+.halloween-title {
+  font-size: 2.5rem;
+  color: #ffa31a;
+  text-shadow: 0 0 20px rgba(255, 136, 0, 0.8);
+  margin-bottom: 0.5rem;
+}
+
+.halloween-subtitle {
+  color: #ffdd99;
+  font-size: 1.2rem;
+  margin-bottom: 1.5rem;
+}
+
+@keyframes glowPulse {
+  0% { box-shadow: 0 0 20px rgba(255, 136, 0, 0.6); }
+  100% { box-shadow: 0 0 40px rgba(255, 200, 0, 0.8); }
+}
+
+.halloween-image-box {
+  margin-top: 1rem;
+}
+
+.halloween-image {
+  width: 60%;
+  max-width: 400px;
+  border-radius: 15px;
+  box-shadow: 0 0 25px rgba(255, 120, 0, 0.5);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.halloween-image:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 35px rgba(255, 180, 0, 0.8);
+}
+
+.halloween-footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
+  background: rgba(10, 0, 20, 0.6);
+  color: #ffb347;
+  padding: 0.5rem;
+  font-size: 0.9rem;
+  border-top: 1px solid rgba(255, 136, 0, 0.3);
+}
