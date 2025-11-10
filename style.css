@@ -311,15 +311,3 @@ body::after {
   transform: scale(1.05);
   box-shadow: 0 0 35px rgba(255, 180, 0, 0.8);
 }
-
-.halloween-footer {
-  position: fixed;
-  bottom: 0;
-  width: 100%;
-  text-align: center;
-  background: rgba(10, 0, 20, 0.6);
-  color: #ffb347;
-  padding: 0.5rem;
-  font-size: 0.9rem;
-  border-top: 1px solid rgba(255, 136, 0, 0.3);
-}
