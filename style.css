@@ -398,8 +398,8 @@ body::after {
 }
 
 .colors{
-	width:22%;
-	height:22%;
+	flex: 0 0 calc(25% - 15px);
+    aspect-ratio: 1 / 1;
 	box-sizing:border-box;
 	display:flex;
 	align-items:center;
