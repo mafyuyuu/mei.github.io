@@ -304,3 +304,105 @@ body::after {
   transform: scale(1.05);
   box-shadow: 0 0 35px rgba(255, 180, 0, 0.8);
 }
+
+#silver{
+	color:black;
+	background-color:#C0C0C0;
+}
+
+#gray{
+	color:white;
+	background-color:#808080;
+}
+
+#maroon{
+	color:white;
+	background-color:#800000;
+}
+
+#green{
+	color:white;
+	background-color:#008000;
+}
+
+#white{
+	color:black;
+	background-color:#FFFFFF;
+}
+
+#black{
+	color:white;
+	background-color:#000000;
+}
+
+#red{
+	color:black;
+	background-color:#FF0000;
+}
+
+#lime{
+	color:black;
+	background-color:#00FF00;
+}
+
+#navy{
+	color:white;
+	background-color:#000080;
+}
+
+#purple{
+	color:white;
+	background-color:#800080;
+  border:15px;
+	border-style:dotted;
+}
+
+#olive{
+	color:white;
+	background-color:#808000;
+}
+
+#teal{
+	color:white;
+	background-color:#008080;
+}
+
+#blue{
+	color:white;
+	background-color:#0000FF;
+}
+
+#magenta{
+	color:black;
+	background-color:#FF00FF;
+}
+
+#yellow{
+	color:black;
+	background-color:#FFFF00;
+}
+
+#cyan{
+	color:black;
+	background-color:#00FFFF;
+}
+
+.container_colors{
+	width:500px;
+	height:500px;
+	display:flex;
+	flex-wrap:wrap;
+	align-items:center;
+	justify-content:center;
+	gap:15px;
+}
+
+.colors{
+	width:22%;
+	height:22%;
+	box-sizing:border-box;
+	display:flex;
+	align-items:center;
+	justify-content:center;
+	text-align:center;
+}
