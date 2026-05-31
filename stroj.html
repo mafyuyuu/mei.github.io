@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Strój – Uczeń i Nauczyciel</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --primary: #a8e1ff;
+      --secondary: #ffffff;
+      --accent: #ffe169;
+      --text: #2596be;
+      --bg: #f4faff;
+      --glow: 0 0 20px rgba(255, 225, 105, 0.6);
+      --glass: rgba(255, 255, 255, 0.4);
+    }
+
+    body {
+      font-family: "Poppins", "Segoe UI", sans-serif;
+      background: radial-gradient(circle at top, var(--bg), #d7e7ff 80%);
+      color: var(--text);
+      margin: 0; padding: 0;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      transition: all 0.3s ease;
+      position: relative;
+      overflow-x: hidden;
+    }
+
+    h1, h2 {
+      color: var(--accent);
+      text-shadow: 0 0 10px rgba(255,225,105,0.6), 0 0 20px rgba(168,225,255,0.4);
+      letter-spacing: 1px;
+    }
+    h1 { font-size: 2.2rem; margin-top: 1.5rem; }
+    h2 { font-size: 1.4rem; margin-top: 1rem; }
+
+    p, a, figcaption, td, li, footer { color: #2b2f3a; opacity: 0.9; }
+    p strong { color: #333b4d; }
+
+    div, section {
+      background: var(--glass);
+      backdrop-filter: blur(10px);
+      border-radius: 20px;
+      padding: 1rem 2rem;
+      margin: 1rem;
+      box-shadow: var(--glow);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      max-width: 600px;
+    }
+    div:hover, section:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 0 30px rgba(255,225,105,0.8);
+    }
+
+    a {
+      color: var(--primary);
+      text-decoration: none;
+      font-weight: 600;
+      position: relative;
+      transition: color 0.3s ease;
+    }
+    a::after {
+      content: "";
+      position: absolute;
+      left: 0; bottom: -3px;
+      width: 100%; height: 2px;
+      background: var(--accent);
+      transform: scaleX(0);
+      transition: transform 0.3s ease;
+      transform-origin: right;
+    }
+    a:hover { color: var(--accent); }
+    a:hover::after { transform: scaleX(1); transform-origin: left; }
+
+    img {
+      max-width: 100%;
+      border-radius: 15px;
+      box-shadow: 0 0 15px rgba(255,225,105,0.4);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    img:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 25px rgba(168,225,255,0.5);
+    }
+
+    table {
+      border-collapse: collapse;
+      margin: 20px auto;
+      background: var(--glass);
+      backdrop-filter: blur(8px);
+      border-radius: 15px;
+      overflow: hidden;
+      box-shadow: var(--glow);
+    }
+    td {
+      border: 1px solid rgba(255,255,255,0.3);
+      padding: 8px 18px;
+      text-align: center;
+      font-weight: 500;
+      color: var(--text);
+      transition: background 0.3s ease;
+    }
+    .highlight {
+      background: rgba(255,225,105,0.4);
+      color: #0e2135;
+      box-shadow: inset 0 0 10px rgba(255,225,105,0.5);
+    }
+    .pudrowy { background: rgba(168,225,255,0.4); }
+
+    figcaption { font-size: 0.9rem; color: #5a6a85; }
+
+    footer {
+      margin-top: auto;
+      padding: 1rem;
+      color: #5a6a85;
+      font-size: 0.9rem;
+      background: rgba(255,255,255,0.3);
+      border-top: 1px solid rgba(255,255,255,0.4);
+      width: 100%;
+      box-sizing: border-box;
+      border-radius: 0;
+      max-width: 100%;
+    }
+
+    @keyframes glowPulse {
+      0%, 100% { box-shadow: 0 0 15px rgba(255,225,105,0.5); }
+      50%       { box-shadow: 0 0 30px rgba(168,225,255,0.7); }
+    }
+    .glow { animation: glowPulse 2.5s infinite alternate; }
+
+    body::before, body::after {
+      content: "";
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      z-index: -1;
+      pointer-events: none;
+    }
+    body::before {
+      background:
+        radial-gradient(circle, rgba(255,225,105,0.4) 0%, transparent 70%) 0 0,
+        radial-gradient(circle, rgba(168,225,255,0.4) 0%, transparent 70%) 100px 100px,
+        radial-gradient(circle, rgba(255,255,255,0.3) 0%, transparent 70%) 200px 150px,
+        radial-gradient(circle, rgba(255,225,105,0.3) 0%, transparent 70%) 300px 250px,
+        radial-gradient(circle, rgba(168,225,255,0.4) 0%, transparent 70%) 400px 350px,
+        radial-gradient(circle, rgba(255,255,255,0.4) 0%, transparent 70%) 600px 450px,
+        radial-gradient(circle, rgba(255,225,105,0.4) 0%, transparent 70%) 800px 300px;
+      background-size: 1200px 1200px;
+      animation: starsMove 60s linear infinite;
+    }
+    body::after {
+      background: radial-gradient(circle at 50% 60%, rgba(255,225,105,0.15), rgba(168,225,255,0.1) 60%, transparent 100%);
+      animation: auraFloat 15s ease-in-out infinite alternate;
+    }
+
+    @keyframes starsMove {
+      from { background-position: 0 0; }
+      to   { background-position: 1000px 800px; }
+    }
+    @keyframes auraFloat {
+      0%   { transform: scale(1)    translateY(0);     opacity: 0.8; }
+      50%  { transform: scale(1.1)  translateY(-10px); opacity: 1;   }
+      100% { transform: scale(1.05) translateY(10px);  opacity: 0.7; }
+    }
+
+    /* layout */
+    .figures-row {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 1.5rem;
+      background: none !important;
+      box-shadow: none !important;
+      backdrop-filter: none !important;
+      padding: 0.5rem !important;
+      max-width: 1050px;
+    }
+    .figures-row:hover { transform: none !important; box-shadow: none !important; }
+
+    .card {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      max-width: 440px;
+    }
+    .card img { width: 100%; max-width: 400px; }
+
+    figcaption {
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: #2596be;
+      margin-top: 0.5rem;
+    }
+
+    h3 {
+      color: var(--text);
+      font-size: 1.05rem;
+      margin: 0.6rem 0 0.25rem;
+    }
+
+    .badge {
+      display: inline-block;
+      background: rgba(255,225,105,0.35);
+      border: 1.5px solid rgba(255,225,105,0.6);
+      border-radius: 30px;
+      padding: 0.2rem 0.9rem;
+      font-size: 0.82rem;
+      font-weight: 600;
+      color: #5a4a00;
+      margin: 0.2rem;
+    }
+
+    ul.clothing-list {
+      list-style: none;
+      padding: 0; margin: 0.4rem 0 0;
+      text-align: left;
+    }
+    ul.clothing-list li { padding: 0.2rem 0; color: #2b2f3a; opacity: 1; }
+    ul.clothing-list li::before { content: "✦ "; color: var(--accent); }
+
+    .badges-wrap {
+      margin-top: .6rem;
+      background: none !important;
+      box-shadow: none !important;
+      backdrop-filter: none !important;
+      padding: .2rem !important;
+      max-width: 100% !important;
+    }
+    .badges-wrap:hover { transform: none !important; box-shadow: none !important; }
+  </style>
+</head>
+<body>
+
+  <h1 class="glow">Strój – Uczeń i Nauczyciel</h1>
+
+  <div>
+    <h2>Witaj na stronie o stroju!</h2>
+    <p>
+      Strój to nie tylko ubranie – to wyraz <strong>osobowości i kreatywności</strong>.
+      Poniżej prezentuję autorskie projekty strojów ucznia i nauczyciela,
+      stworzone własnoręcznie w programie graficznym. Każdy projekt łączy
+      elegancję z wyjątkowym charakterem!
+    </p>
+  </div>
+
+  <div class="figures-row">
+
+    <div class="card">
+      <figure>
+        <img src="stroj1.png">
+        <figcaption>Uczniowie</figcaption>
+      </figure>
+      <h3>Opis stroju ucznia</h3>
+      <ul class="clothing-list">
+        <li>Fioletowy kapelusz z piórkiem</li>
+        <li>Biała koszula z krawatem</li>
+        <li>Granatowe spodnie</li>
+        <li>Futrzana peleryna</li>
+        <li>Eleganckie półbuty</li>
+      </ul>
+      <div class="badges-wrap">
+        <span class="badge">Oryginalność</span>
+        <span class="badge">Styl</span>
+        <span class="badge">Klasa</span>
+      </div>
+    </div>
+
+    <div class="card">
+      <figure>
+        <img src="stroj2.png">
+        <figcaption>Nauczyciele</figcaption>
+      </figure>
+      <h3>Opis stroju nauczyciela</h3>
+      <ul class="clothing-list">
+        <li>Kapelusz z pawich piór</li>
+        <li>Garnitur / suknia wieczorowa</li>
+        <li>Złoty pasek i broszka</li>
+        <li>Futrzana peleryna z grą świateł</li>
+        <li>Eleganckie obuwie na obcasie</li>
+      </ul>
+      <div class="badges-wrap">
+        <span class="badge">Elegancja</span>
+        <span class="badge">Autorytet</span>
+        <span class="badge">Wyrafinowanie</span>
+      </div>
+    </div>
+
+  </div>
+
+  <footer>
+    &copy; Grafiki: własne &nbsp;
+  </footer>
+
+</body>
+</html>
